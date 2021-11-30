@@ -6,23 +6,21 @@ class VideoDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-                height: 12.0,
-                color: Colors.green[300],
-                margin: const EdgeInsets.only(top: 8)),
-            Container(
-                height: 12.0,
-                color: Colors.green[300],
-                margin: const EdgeInsets.only(top: 8)),
-            Container(
-                height: 12.0,
-                color: Colors.green[300],
-                margin: const EdgeInsets.only(top: 8))
-          ]),
+      child: Container(
+        height: 70.0,
+        padding: const EdgeInsets.only(left: 10),
+        child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const Text('@firstjonny', style: TextStyle(fontWeight: FontWeight.bold),),
+              const Text('Video title and some other stuff'),
+              Row(children: const [
+                Icon(Icons.music_note,  size: 15.0,color: Colors.white,),
+                Text('Artist name - Album name - song', style: TextStyle(fontSize: 12.0))]),
+            ]),
+      ),
     );
   }
 }

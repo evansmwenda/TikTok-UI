@@ -9,27 +9,39 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      child: Column(
-        children: [
-          //top section
-          topSection,
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            //top section
+            topSection,
 
-          //middle section
-          middleSection,
+            //middle section
+            middleSection,
 
-          //bottom section
-          const BottomToolbar(),
-        ],
-      ),
-    ));
+            //bottom section
+             BottomToolbar(),
+            const SizedBox(height:10),
+          ],
+        ));
   }
 
   Widget get topSection => Container(
-        height: 100.0,
-        padding: const EdgeInsets.only(bottom: 15.0),
-        color: Colors.yellow[300],
-      );
+    height: 100.0,
+    padding: EdgeInsets.only(bottom: 15.0),
+    alignment: Alignment(0.0, 1.0),
+    child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text('Following'),
+          Container(
+            width: 15.0,
+          ),
+          Text('For you',
+              style: TextStyle(
+                  fontSize: 17.0, fontWeight: FontWeight.bold))
+        ]),
+  );
 
   Widget get middleSection => Expanded(
       child: Row(
